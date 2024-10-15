@@ -1,0 +1,107 @@
+@charset "UTF-8";
+/* 전체 레이아웃 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+form {
+    width: 500px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+}
+
+/* 테이블과 입력 필드 스타일 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+th {
+    width: 20%;
+    font-weight: bold;
+    color: #333;
+}
+
+td {
+    width: 80%;
+}
+#img{
+	display: none;
+}
+input[type="text"], textarea, input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:hover, textarea:hover, input[type="file"]:hover {
+    border-color: #888;
+}
+
+input[type="text"]:focus, textarea:focus, input[type="file"]:focus {
+    border-color: #5a9;
+    outline: none;
+    box-shadow: 0 0 8px rgba(90, 153, 90, 0.5);
+}
+
+/* 버튼들을 한 줄로 정렬 */
+td.button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+input[type="submit"], input[type="reset"], input[type="button"] {
+    width: 32%;  /* 버튼 크기 조정 */
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"], input[type="button"] {
+    background-color: #4CAF50;
+    color: white;
+}
+
+input[type="submit"]:hover, input[type="button"]:hover {
+    background-color: #45a049;
+}
+
+input[type="reset"] {
+    background-color: #f44336;
+    color: white;
+}
+
+input[type="reset"]:hover {
+    background-color: #e53935;
+}
+#resetBtn{
+	background-color: #f44336;
+    color: white;
+}
+#resetBtn:hover {
+    background-color: #e53935;
+}

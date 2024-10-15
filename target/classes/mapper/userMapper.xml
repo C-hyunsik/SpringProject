@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- <mapper namespace="userSQL"> -->
+<mapper namespace="user.dao.UserDAO">
+	<!-- 중복아이디 체크 -->
+	<select id="searchUser" parameterType="String" resultType="String">
+		select id from usertable where id = #{id}
+	</select>
+	<insert id="userWrite" parameterType="user.bean.UserDTO">
+		insert into usertable values(#{name}, #{id}, #{pwd})
+	</insert>
+	<select id="userList" resultType="user.bean.UserDTO">
+		select * from usertable limit #{startnum}, #{endnum}
+	</select>
+	<select id="getTotalA" resultType="Integer">
+		select count(*) from usertable
+	</select>
+	<select id="getUserInfo" resultType="user.bean.UserDTO">
+		select * from usertable where id = #{id}
+	</select>
+	<update id="userUpdate" parameterType="user.bean.UserDTO">
+		update usertable set name = #{name}, pwd = #{pwd} where id = #{id}
+	</update>
+	<delete id="userDelete" parameterType="String">
+		delete from usertable where id = #{id}
+	</delete>
+</mapper>

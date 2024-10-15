@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- <mapper namespace="userSQL"> -->
+<mapper namespace="user.dao.UserUploadDAO">
+	<!-- SQL문을 실행할 때, 넘어오는 파라메터 타입 List일 경우
+	forEach 태그의 collection 속성에 사용할 수 있는 이름은 list 또는 collection이 가능하다.-->
+	<insert id="imgUpload">
+		insert into userUpload (imageName, imageContent, imageFileName, imageOriginalFileName)
+		values
+		<foreach collection="list" item="dto" separator=",">
+			(#{dto.imageName}, #{dto.imageContent}, #{dto.imageFileName}, #{dto.imageOriginalFileName})
+		</foreach>
+	</insert>
+	<select id="uploadList" resultType="userUploadDTO">
+		select * from userupload order by seq desc
+	</select>
+	<select id="uploadView" parameterType="String" resultType="userUploadDTO">
+		select * from userupload where seq = #{seq}
+	</select>
+	<select id="getImageFileName" parameterType="Integer" resultType="String">
+		select imageFileName from userupload where seq = #{seq}
+	</select>
+	<update id="imgUpdate" parameterType="userUploadDTO">
+		update userUpload set imageName = #{imageName},
+							  imageContent = #{imageContent},
+							  imageFileName = #{imageFileName},
+							  imageOriginalFileName = #{imageOriginalFileName}
+						  where seq = #{seq}
+	</update>
+	<delete id="ncpDelete" parameterType="Integer">
+		delete from userUpload where seq = #{seq}
+	</delete>
+	<select id="getCheckedFileName" parameterType="Integer" resultType="String">
+		select imageFileName from userupload where seq = #{seq}
+	</select>
+</mapper>

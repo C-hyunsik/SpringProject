@@ -1,0 +1,114 @@
+@charset "UTF-8";
+#imgWrap {
+    display: flex;
+    justify-content: center;
+    align-items: bottom;
+    margin: 50px auto;
+}
+
+form {
+    width: 100%; /* 폼의 전체 너비를 100%로 변경 */
+    max-width: 500px; /* 최대 너비 설정 */
+    margin: 50px auto;
+    padding: 25px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+    background-color: #f4f4f4;
+}
+
+div {
+    margin-bottom: 20px;
+}
+
+div label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input[type="text"], input[type="password"] {
+    width: calc(100% - 20px); /* 입력 필드의 너비를 전체 너비에 맞게 조정 */
+    padding: 10px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:hover, input[type="password"]:hover {
+    border-color: #888;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #5a9;
+    outline: none;
+    box-shadow: 0 0 8px rgba(90, 153, 90, 0.5);
+}
+
+#idWrap, #nameWrap, #pwdWrap {
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    color: #555;
+}
+
+/* 버튼 스타일 */
+input[type="button"], input[type="reset"] {
+    width: 100%; /* 버튼의 너비를 100%로 설정하여 전체 너비 차지 */
+    margin: 5px 0; /* 버튼 사이 간격 추가 */
+    padding: 12px; /* 버튼 패딩 */
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* 기본 버튼 스타일 */
+input[type="button"] {
+    background-color: #4CAF50;
+    color: white;
+}
+
+input[type="button"]:hover {
+    background-color: #45a049;
+}
+
+/* 초기화 버튼 스타일 */
+#resetBtn,#deleteBtn {
+    background-color: #f44336;
+    color: white;
+}
+
+#resetBtn:hover, #deleteBtn:hover{
+    background-color: #e53935;
+}
+
+/* 오류 메시지 스타일 */
+#idDiv, #pwdDiv, #nameDiv {
+    color: red;
+    font-weight: bold;
+    font-size: 9pt;
+}
+
+/* 버튼들을 가로로 배치하여 전체 너비 채우기 */
+form div:last-child {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+form div:last-child input {
+    flex: 1; /* 각 버튼이 동일한 너비를 가지도록 설정 */
+    margin: 0 5px; /* 버튼 사이의 간격 설정 */
+}
+
+form div:last-child input:first-child {
+    margin-left: 0; /* 첫 번째 버튼의 왼쪽 여백 제거 */
+}
+
+form div:last-child input:last-child {
+    margin-right: 0; /* 마지막 버튼의 오른쪽 여백 제거 */
+}
